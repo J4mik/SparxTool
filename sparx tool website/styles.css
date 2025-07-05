@@ -1,21 +1,23 @@
-[data-theme="light"] {
+[data-theme="dark"] {
     --main: #2a73d7;
     --gradient: linear-gradient(10deg, #1a1a1a, #0e0e0e);
     --accent: #fff;
     --bottom: #333;
     --backgroud_color: #2228;
+    --highlight: #c7defe;
 }
 
-[data-theme="dark"] {
+[data-theme="light"] {
     --main: #2a73d7;
     --gradient: linear-gradient(10deg, #8d8b8b, #ededed);
     --accent: #333;
     --bottom: #fff;
     --backgroud_color: rgba(194, 194, 194, 0.533);
+    --highlight: #898989;
 }
 
 a {
-    color: var(--bottom);
+    color: white;
     text-decoration: none;
     cursor: pointer;
     background: none;
@@ -49,7 +51,7 @@ header {
     margin-top: 10px;
     background-color: var(--main);
     border-radius: 4px;
-    color: var(--accent);
+    color: #ccc;
 }
 
 header>a {
@@ -89,23 +91,34 @@ h1>#blue {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 20px;
 }
 
 #spacer {
     width: 20px;
 }
 
-#download-button {
+.download-button {
     cursor: pointer;
     text-decoration: none;
     text-align: center;
     font-size: 15px;
-    width: 150px;
+    width: 200px;
     padding: 12px;
     background-color: var(--main);
     border: none;
     border-radius: 4px;
-    color: var(--accent);
+    color: #ccc;
+    /* Make it glowwwww */
+    box-shadow: 0 0 40px var(--main), 0 0 100px var(--main);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+#download-button:hover {
+
+    box-shadow: 0 0 12px var(--main), 0 0 24px var(--main);
+    transform: scale(1.05);
+
 }
 
 #features,
@@ -127,4 +140,13 @@ li {
     padding: 20px;
 }
 
-/* The slider */
+
+
+a:hover {
+    color: var(--highlight);
+    text-decoration: bold;
+}
+
+.fa-chrome {
+    scale: 1.3;
+}

@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/f756cbfd78.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="https://github.com/conistuffwow/2006.css/blob/main/css/2006.css"> -->
+
     <title>SparxTool</title>
 </head>
 
 <body>
     <header>
-        <a>Light Mode: </a>
-        <label class="switch">
-            <input type="checkbox">
-            <span class="slider round"></span>
-        </label>
+        <a class="theme-selector">Dark Mode</a>
+
         <a onclick="document.getElementsByTagName('main')[0].scrollIntoView({ behavior: 'smooth' })">download</a>
         <a onclick="document.getElementById('features').scrollIntoView({ behavior: 'smooth' })">features</a>
         <a onclick="document.getElementById('about-scroll').scrollIntoView({ behavior: 'smooth' })">about</a>
@@ -25,10 +25,14 @@
             </h1>
             <br><br>
             <div id="download-container">
-                try it now:
-                <span id="spacer"></span>
-                <a id="download-button" href="SparxTool.zip" download>
-                    download for windows
+                <a id="download-chrome" class="download-button" href="SparxTool.zip" download>
+                    <i class="fa-brands fa-chrome"></i> Download for Chrome
+                </a>
+                <a id="download-firefox" class="download-button" href="SparxTool.zip" download>
+                    <i class="fa-brands fa-firefox"></i> Download for Firefox
+                </a>
+                <a id="download-other" class="download-button" href="SparxTool.zip" download>
+                    <i class="fa-brands fa-safari"></i> Download for Others
                 </a>
             </div>
             <br><br>
