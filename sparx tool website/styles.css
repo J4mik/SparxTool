@@ -1,17 +1,41 @@
-:root {
+[data-theme="dark"] {
     --main: #2a73d7;
+    --gradient: linear-gradient(10deg, #1a1a1a, #0e0e0e);
+    --accent: #fff;
+    --bottom: #333;
+    --backgroud_color: #2228;
+    --highlight: #c7defe;
 }
+
+[data-theme="light"] {
+    --main: #2a73d7;
+    --gradient: linear-gradient(10deg, #8d8b8b, #ededed);
+    --accent: #333;
+    --bottom: #fff;
+    --backgroud_color: rgba(194, 194, 194, 0.533);
+    --highlight: #898989;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    background: none;
+}
+
 
 * {
     margin: 0;
     padding: 0;
+    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 body {
     font-family: Helvetica, Arial, sans-serif;
     min-height: 100vh;
-    background: linear-gradient(10deg, #1a1a1a, #0e0e0e); 
-    color: #fff;
+    background: var(--gradient);
+    color: var(--accent);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,10 +51,10 @@ header {
     margin-top: 10px;
     background-color: var(--main);
     border-radius: 4px;
-    color: #fff;
+    color: #ccc;
 }
 
-header > a {
+header>a {
     margin: 0 15px;
     cursor: pointer;
     user-select: none;
@@ -50,15 +74,16 @@ main {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    border-bottom: 2px solid #333;
+    border-bottom: 2px solid var(--bottom);
 }
 
 h1 {
     display: flex;
     font-size: 90px;
+
 }
 
-h1 > #blue {
+h1>#blue {
     color: var(--main);
 }
 
@@ -66,26 +91,38 @@ h1 > #blue {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 20px;
 }
 
 #spacer {
     width: 20px;
 }
 
-#download-button {
+.download-button {
     cursor: pointer;
     text-decoration: none;
     text-align: center;
     font-size: 15px;
-    width: 150px;
+    width: 200px;
     padding: 12px;
     background-color: var(--main);
     border: none;
     border-radius: 4px;
-    color: #fff;
+    color: #ccc;
+    /* Make it glowwwww */
+    box-shadow: 0 0 40px var(--main), 0 0 100px var(--main);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
 }
 
-#features, #about {
+#download-button:hover {
+
+    box-shadow: 0 0 12px var(--main), 0 0 24px var(--main);
+    transform: scale(1.05);
+
+}
+
+#features,
+#about {
     width: 1000px;
     max-width: 85vw;
 }
@@ -97,8 +134,19 @@ li {
 }
 
 #about {
-    background-color: #2228;
-    border: 2px solid #333;
+    background-color: var(--backgroud_color);
+    border: 2px solid var(--bottom);
     border-radius: 6px;
     padding: 20px;
+}
+
+
+
+a:hover {
+    color: var(--highlight);
+    text-decoration: bold;
+}
+
+.fa-chrome {
+    scale: 1.3;
 }
